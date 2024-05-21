@@ -1,8 +1,5 @@
 import './App.css';
 import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
-import shoes1 from './img/shoes1.jpg'
-import clothe1 from './img/clothe1.jpg'
-import watch1 from './img/watch1.jpg'
 
 function App() {
   return (
