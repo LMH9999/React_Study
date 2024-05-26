@@ -1,10 +1,10 @@
 import './App.css';
-import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
+import {Container, Nav, Navbar, Row} from "react-bootstrap";
 import {useState} from "react";
 import './App.css';
 import data from './data'
 import Shoes from "./components/Shoes";
-import {Link, Route, Routes, useNavigate} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import Detail from "./pages/Detail";
 import About from "./components/About";
 
