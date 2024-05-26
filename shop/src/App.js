@@ -7,9 +7,10 @@ import Shoes from "./components/Shoes";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Detail from "./pages/Detail";
 import About from "./components/About";
+import axios from "axios";
 
 function App() {
-    let [shoes] = useState(data)
+    let [shoes,setShoes] = useState(data)
     let navigate = useNavigate()
 
     return (
@@ -40,6 +41,26 @@ function App() {
                                 }
                             </Row>
                         </Container>
+                        <button onClick={()=>{
+                            axios.get('https://codingapple1.github.io/shop/data2.json')
+                                .then((result)=>{
+                                    console.log(result.data)
+                                    let copy = [...shoes,...result.data]
+                                    setShoes(copy)
+                                })
+                                .catch(()=>{
+                                    console.log("실패")
+                                })
+
+
+                            /*Promise.all([axios.get('/url1'),axios.get('/url2')])
+                                .then(()=>{
+
+                                })*/
+
+                            // axios.post('/asdasd',{name : 'kim'})
+
+                        }}>더보기</button>
                     </>
                 }/>
                 <Route path={"/detail/:id"} element={ <Detail shoes={shoes}/> }/>
